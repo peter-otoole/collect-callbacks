@@ -5,8 +5,7 @@ This function is designed to collect callbacks and call a final callback with al
 
 A typical use case is if you have to loop over asynchronous functions and don't want to call multiple callbacks but want the results.
 
----
-var enterItems = function( values, callback ){
+---var enterItems = function( values, callback ){
 
 	var collect = require('collect-callbacks.js');
 	
@@ -19,8 +18,7 @@ var enterItems = function( values, callback ){
 			addOne( err, res );
 		});
 	}
-}
----
+}---
 
 
 License
