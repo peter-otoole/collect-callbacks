@@ -1,30 +1,26 @@
-collect-callbacks.js
-====================
+##collect-callbacks.js
 
 This function is designed to collect callbacks and call a final callback with all the returned values.
 
 A typical use case is if you have to loop over asynchronous functions and don't want to call multiple callbacks but want the results.
 
----splus
+```
 var enterItems = function( values, callback ){
 
 	var collect = require('collect-callbacks.js');
-	
-	var addOne = collect.init( values.length, callback );
-	
-	for( var value in values){
-	
-		db.insert( value, function( err, res ){
 		
+	var addOne = collect.init( values.length, callback );
+		
+	for( var value in values){
+		db.insert( value, function( err, res ){
 			addOne( err, res );
 		});
 	}
 }
----
+```
 
 
-License
-=======
+##License
 
 Copyright 2014 Peter O'Toole
 
