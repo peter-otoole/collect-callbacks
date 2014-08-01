@@ -19,6 +19,9 @@ var enterItems = function( values, callback ){
 }
 ```
 
+##Rules
+
+The library takes a group of callbacks and condenses them down to one single callback. The final callback, the one you pass in, is only called when it collects the number of callbacks you set. So say you set it to be 25, it will only execute the "master" callback if you addOne 25 times. In the example above, say db.insert has a bug in it and for some reason one out of the 25 anonymous functions fails and doesn't call addOne, the master callback will never be called. 
 
 ##License
 
