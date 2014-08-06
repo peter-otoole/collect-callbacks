@@ -18,6 +18,11 @@ var enterItems = function( values, callback ){
 	}
 }
 ```
+You also have the chance to reduce the errors down to one error, if you have 5 callbacks, you will have an array of errors making it difficult to check if one has occurred. Using "anyErrors", the array is reduced down to one boolean value. 
+
+```
+var addOne = collect.anyErrors.init( values.length, callback );
+```
 
 ##Rules
 
